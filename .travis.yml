@@ -13,6 +13,7 @@ script:
 addons:
   apt:
     packages:
+      - node
       - npm
 
 notifications:
