@@ -1,0 +1,21 @@
+dist: trusty
+sudo: true
+
+language: bash
+
+cache:
+  directories:
+    - "node_modules"
+
+script:
+    - sudo npm install -g grunt-cli bower && cd omega-build && sudo npm run deps && sudo npm run dev && grunt
+
+addons:
+  apt:
+    packages:
+      - npm
+
+notifications:
+  email:
+    on_success: never
+    on_failure: never
