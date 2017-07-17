@@ -1,0 +1,12 @@
+dist: trusty
+sudo: true
+
+language: node_js
+node_js: stable
+
+cache:
+  directories:
+    - node_modules
+
+script:
+    - npm install -g grunt-cli && npm install bower && cd omega-build && npm run deps && npm run dev && grunt
