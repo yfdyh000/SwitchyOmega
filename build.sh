@@ -1,5 +1,5 @@
-npm install grunt-cli bower && \
+sudo npm install grunt-cli bower && \
 cd omega-build && \
-npm run deps && \
-npm run dev && \
+sudo npm run deps && \
+sudo npm run dev && \
 grunt

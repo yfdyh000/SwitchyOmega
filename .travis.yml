@@ -10,12 +10,7 @@ cache:
     - "node_modules"
 
 script:
-    - sudo npm install -g grunt-cli bower && cd omega-build && sudo npm run deps && sudo npm run dev && grunt
-
-addons:
-  apt:
-    packages:
-      - npm
+    - npm install grunt-cli bower && cd omega-build && npm run deps && npm run dev && grunt
 
 notifications:
   email:
