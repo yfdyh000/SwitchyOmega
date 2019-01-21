@@ -26,18 +26,15 @@ class ChromeTabs
       tabs.forEach (tab) =>
         @_dirtyTabs[tab.id] = tab.id
         @onUpdated tab.id, {}, tab if tab.active
-    if chrome.browserAction.setPopup?
-      chrome.browserAction.setTitle({title: action.title})
-    else
-      chrome.browserAction.setTitle({title: action.shortTitle})
+    title = if @_canSetPopup() then action.title else action.shortTitle
+    chrome.browserAction.setTitle({title: title})
     @setIcon(action.icon)
 
   onUpdated: (tabId, changeInfo, tab) ->
     if @_dirtyTabs.hasOwnProperty(tab.id)
       delete @_dirtyTabs[tab.id]
-    else if not changeInfo.url?
-      if changeInfo.status == "complete"
-        return
+    else if not changeInfo.url? and changeInfo.status == "complete"
+      return
     @processTab(tab, changeInfo)
 
   processTab: (tab, changeInfo) ->
@@ -59,10 +56,8 @@ class ChromeTabs
         @clearIcon tab.id
         return
       @setIcon(action.icon, tab.id)
-      if chrome.browserAction.setPopup?
-        chrome.browserAction.setTitle({title: action.title, tabId: tab.id})
-      else
-        chrome.browserAction.setTitle({title: action.shortTitle, tabId: tab.id})
+      title = if @_canSetPopup() then action.title else action.shortTitle
+      return chrome.browserAction.setTitle({title: title, tabId: tab.id})
 
   setTabBadge: (tab, badge) ->
     @_badgeTab ?= {}
@@ -90,6 +85,9 @@ class ChromeTabs
         imageData: icon
       }
     @_chromeSetIcon(params)
+
+  _canSetPopup: ->
+    chrome.browserAction.setPopup?
 
   _chromeSetIcon: (params) ->
     try
