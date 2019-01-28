@@ -7,7 +7,6 @@
     "coffeelint": "^2.1.0",
     "grunt": "^1.0.3",
     "grunt-autoprefixer": "^3.0.4",
-    "grunt-bower-task": "^0.5.0",
     "grunt-coffeelint": "0.0.16",
     "grunt-contrib-coffee": "^2.0.0",
     "grunt-contrib-concat": "^1.0.1",
@@ -17,6 +16,7 @@
     "grunt-contrib-watch": "^1.1.0",
     "grunt-mocha-test": "^0.13.3",
     "grunt-ng-annotate": "^3.0.0",
+    "grunt-npm-bower": "0.0.4",
     "load-grunt-config": "^1.0.1",
     "mocha": "^5.2.0",
     "omega-pac": "../omega-pac"
