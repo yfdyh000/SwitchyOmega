@@ -39,7 +39,7 @@ class AttachedCache
 
 exports.AttachedCache = AttachedCache
 
-tld = require('tldjs')
+{getDomain} = require('tldjs')
 
 exports.isIp = (domain) ->
   return true if domain.indexOf(':') > 0 # IPv6
@@ -49,7 +49,7 @@ exports.isIp = (domain) ->
 
 exports.getBaseDomain = (domain) ->
   return domain if exports.isIp(domain)
-  return tld.getDomain(domain) ? domain
+  return getDomain(domain) ? domain
 
 exports.wildcardForDomain = (domain) ->
   return domain if exports.isIp(domain)
