@@ -28,9 +28,9 @@
   "dependencies": {
     "@bower_components/angular": "angular/bower-angular#1.7.6",
     "@bower_components/angular-animate": "angular/bower-angular-animate#~1.7.2",
-    "@bower_components/angular-bootstrap": "angular-ui/bootstrap-bower#~2.5.0",
+    "@bower_components/angular-bootstrap": "angular-ui/bootstrap-bower#*",
     "@bower_components/angular-i18n": "angular/bower-angular-i18n#~1.7.2",
-    "@bower_components/angular-ladda": "remotty/angular-ladda#~0.4.3",
+    "@bower_components/angular-ladda": "remotty/angular-ladda#*",
     "@bower_components/angular-loader": "angular/bower-angular-loader#~1.7.2",
     "@bower_components/angular-sanitize": "angular/bower-angular-sanitize#~1.7.2",
     "@bower_components/angular-spectrum-colorpicker": "Jimdo/angular-spectrum-colorpicker#~1.3.5",
